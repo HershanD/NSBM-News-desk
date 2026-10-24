@@ -313,7 +313,7 @@
     <nav class="nav-links" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a class="active" href="index.html">News</a>
-      <a href="article.html">Computing</a>
+      <a href="news article.html">Computing</a>
       <a href="#news-grid" data-filter="business">Business</a>
       <a href="#news-grid" data-filter="engineering">Engineering</a>
       <a href="#news-grid" data-filter="sports">Sports</a>
@@ -479,6 +479,7 @@
     const cards = [...document.querySelectorAll(".news-card")];
     const filterButtons = [...document.querySelectorAll(".filter")];
     const navFilterLinks = [...document.querySelectorAll(".nav-links [data-filter]")];
+    const newsNavLink = [...document.querySelectorAll(".nav-links a")].find((link) => link.textContent.trim() === "News");
     const shownCount = document.querySelector("#shown-count");
     const emptyState = document.querySelector("#empty-state");
     let activeCategory = "all";
@@ -499,6 +500,16 @@
       emptyState.style.display = visibleCount ? "none" : "block";
     }
 
+    function syncNavSelection(category) {
+      navFilterLinks.forEach((link) => {
+        link.classList.toggle("active", link.dataset.filter === category);
+      });
+
+      if (newsNavLink) {
+        newsNavLink.classList.toggle("active", category === "all");
+      }
+    }
+
     searchInput.addEventListener("input", updateArticles);
     document.querySelector(".top-search").addEventListener("input", (event) => {
       searchInput.value = event.target.value;
@@ -510,6 +521,7 @@
       filterButtons.forEach((button) => {
         button.classList.toggle("active", button.dataset.filter === category);
       });
+      syncNavSelection(category);
       updateArticles();
     }
 
