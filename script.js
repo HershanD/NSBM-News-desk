@@ -76,3 +76,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+const profileToggle = document.getElementById("profileToggle");
+const profileDropdown = document.getElementById("profileDropdown");
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (profileToggle && profileDropdown) {
+  profileToggle.addEventListener("click", () => {
+    const isOpen = profileDropdown.hidden;
+    profileDropdown.hidden = !isOpen;
+    profileToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".profile-menu")) {
+      profileDropdown.hidden = true;
+      profileToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+
+    if (confirmLogout) {
+      window.location.href = "index.html";
+    }
+  });
+}
