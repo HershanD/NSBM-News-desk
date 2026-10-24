@@ -87,7 +87,7 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 16px;
+  gap: 12px;
   align-items: center;
 }
 
@@ -97,26 +97,105 @@ body {
   font-weight: 500;
   font-size: 14px;
   padding: 6px 12px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
 }
 
-.nav-links a.active, .nav-links a:hover {
+.nav-links a.active, 
+.nav-links a:hover {
   color: var(--primary);
   font-weight: 600;
+}
+
+/* Categories Dropdown */
+.dropdown {
+  position: relative;
 }
 
 .dropdown-toggle {
   display: flex;
   align-items: center;
   gap: 4px;
+  cursor: pointer;
 }
 
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: var(--bg-white);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--text-dark);
+  font-size: 13px;
+  border-radius: 0;
+}
+
+.dropdown-menu li a:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* Reveal dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Nav Link Button Styles */
+.nav-btn-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links .btn-outline {
+  border: 1.5px solid var(--primary);
+  color: var(--primary) !important;
+  background: transparent;
+  padding: 6px 16px;
+}
+
+.nav-links .btn-outline:hover {
+  background: var(--primary);
+  color: #ffffff !important;
+}
+
+.nav-links .btn-primary {
+  background: var(--primary);
+  color: #ffffff !important;
+  padding: 6px 16px;
+}
+
+.nav-links .btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+
+/* Search and Profile Alignment */
 .nav-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 12px;
+  flex-shrink: 0;
 }
 
+/* Update Search Box Styling */
 .search-box {
   position: relative;
   display: flex;
@@ -125,30 +204,54 @@ body {
 
 .search-box .icon {
   position: absolute;
-  left: 12px;
+  left: 14px;
   color: #94a3b8;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
 }
 
 .search-box input {
-  padding: 8px 16px 8px 36px;
-  background: #f1f5f9;
+  padding: 10px 18px 10px 40px;
+  background-color: #f1f5f9;
   border: 1px solid transparent;
-  border-radius: 20px;
+  border-radius: 24px;
   font-size: 14px;
   outline: none;
-  width: 200px;
+  width: 220px;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
 }
 
+.search-box input:focus {
+  background-color: #ffffff;
+  border-color: var(--border);
+  box-shadow: 0 0 0 3px rgba(2, 104, 56, 0.1);
+}
+
+/* Update Green Circular Profile Avatar Button */
 .avatar-badge {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--primary);
+  background-color: var(--primary);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.avatar-badge:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.avatar-badge .icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* Breaking Bar */
