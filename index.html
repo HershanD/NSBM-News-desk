@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSBM NewsDesk - Admin Portal</title>
+  
+  
+  <!-- FontAwesome Icons for simple symbols -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- External CSS Link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ 
+
+  <!-- Top Header Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <div class="brand">
+        <div class="logo-box">
+          <img src="nsbmlogo.jpg"
+         alt="NSBM Green University Logo"
+         class="campus-logo">
+        </div>
+        <span class="brand-title">NSBM <span class="brand-highlight">NewsDesk</span></span>
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">News</a>
+        <a href="#">Submit Article</a>
+        <a href="#">My Bookmarks</a>
+        <a href="#">My Submissions</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="nav-actions">
+        <a href="#" class="btn-admin">Admin Dashboard</a>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" placeholder="Search news...">
+        </div>
+        <button class="profile-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Breaking News Ticker Bar -->
+    <div class="ticker-bar">
+      <div class="ticker-container">
+        <span class="ticker-badge">BREAKING</span>
+        <p class="ticker-text">
+          <div class="breaking">
+    
+    <marquee>
+        Annual Green Walk 2026 announced with massive participation
+        • Faculty of Computing wins the Inter-Faculty Hackathon 2026
+        • Admissions for the new intake
+    </marquee>
+</div>
+          
+  </header>
+
+  <!-- Main Container -->
+  <div class="main-wrapper">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      
+      <div class="sidebar-card">
+        <span class="sidebar-title">ADMIN PORTAL</span>
+        <nav class="sidebar-menu">
+          <a href="#" class="sidebar-link active">
+            <i class="fa-solid fa-border-all"></i> Dashboard
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fa-solid fa-file-lines"></i> Manage Articles
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fa-solid fa-layer-group"></i> Categories
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fa-solid fa-bullhorn"></i> Announcements
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fa-solid fa-chart-simple"></i> Reports
+          </a>
+        </nav>
+      </div>
+
+      <div class="status-card">
+        <h3>System Status</h3>
+        <p>All publishing pipelines and notifications are operating normally.</p>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Server uptime 99.9%
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+      
+      <!-- Top Title and Action Button -->
+      <div class="page-header">
+        <div>
+          <h1>Admin Overview</h1>
+          <p class="subtitle">Welcome back, Administrator. Here's what's happening across NSBM NewsDesk today.</p>
+        </div>
+        <button class="btn-announcement">
+          <i class="fa-solid fa-circle-plus"></i> New Announcement
+        </button>
+      </div>
+
+      <!-- 4 Summary Stat Cards -->
+      <div class="stats-grid">
+        
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>TOTAL ARTICLES</span>
+            <div class="icon-box icon-green">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+          </div>
+          <div class="stat-number">0</div>
+          <div class="stat-trend trend-up">
+            <i class="fa-solid fa-arrow-trend-up"></i> +0 this week
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>READERSHIP</span>
+            <div class="icon-box icon-green">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+          </div>
+          <div class="stat-number">0k</div>
+          <div class="stat-trend trend-up">
+            <i class="fa-solid fa-arrow-trend-up"></i> +0% vs last month
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span>STUDENTS</span>
+            <div class="icon-box icon-gray">
+              <i class="fa-solid fa-users"></i>
+            </div>
+          </div>
+          <div class="stat-number">0</div>
+          <div class="stat-subtext">Active student accounts</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="text-red">PENDING REVIEW</span>
+            <div class="icon-box icon-red">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+          </div>
+          <div class="stat-number">0</div>
+          <div class="stat-trend trend-danger">
+            <i class="fa-solid fa-circle-exclamation"></i> Requires attention
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pending Submissions Table Section -->
+      <div class="table-card">
+        
+        <div class="table-header">
+          <div>
+            <h2>Pending Article Submissions</h2>
+            <p class="subtitle">Review club and student submissions before publishing to the live news portal.</p>
+          </div>
+          <span class="badge-pending">0 Pending</span>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>ARTICLE TITLE</th>
+                <th>AUTHOR / CLUB</th>
+                <th>CATEGORY</th>
+                <th>SUBMITTED DATE</th>
+                <th class="text-right">ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>
+                  <div class="article-title">AI & Robotics Exhibition 2026 Showcase</div>
+                  <div class="article-sub">Faculty of Computing</div>
+                </td>
+                <td class="author-name">Tharindu Silva</td>
+                <td><span class="category-tag tag-teal">Technology</span></td>
+                <td class="date-cell">AUg 24, 2026</td>
+                <td class="text-right">
+                  <div class="action-buttons">
+                    <button class="btn-approve"><i class="fa-solid fa-check"></i> Approve</button>
+                    <button class="btn-reject"><i class="fa-solid fa-xmark"></i> Reject</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="article-title">Inter-University Cricket Championship Finals</div>
+                  <div class="article-sub">Sports Council</div>
+                </td>
+                <td class="author-name">Kavindu Perera</td>
+                <td><span class="category-tag tag-green">Sports</span></td>
+                <td class="date-cell">Aug 23, 2026</td>
+                <td class="text-right">
+                  <div class="action-buttons">
+                    <button class="btn-approve"><i class="fa-solid fa-check"></i> Approve</button>
+                    <button class="btn-reject"><i class="fa-solid fa-xmark"></i> Reject</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="article-title">Annual Gavel Club Poetry Slam Night</div>
+                  <div class="article-sub">Gavel NSBM</div>
+                </td>
+                <td class="author-name">Anjali Mendis</td>
+                <td><span class="category-tag tag-rose">Arts & Culture</span></td>
+                <td class="date-cell">Aug 22, 2026</td>
+                <td class="text-right">
+                  <div class="action-buttons">
+                    <button class="btn-approve"><i class="fa-solid fa-check"></i> Approve</button>
+                    <button class="btn-reject"><i class="fa-solid fa-xmark"></i> Reject</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="article-title">Green University Tree Planting Initiative</div>
+                  <div class="article-sub">Leo Club of NSBM</div>
+                </td>
+                <td class="author-name">Sahan Jayasinghe</td>
+                <td><span class="category-tag tag-lightgreen">Campus Life</span></td>
+                <td class="date-cell">Aug 21, 2026</td>
+                <td class="text-right">
+                  <div class="action-buttons">
+                    <button class="btn-approve"><i class="fa-solid fa-check"></i> Approve</button>
+                    <button class="btn-reject"><i class="fa-solid fa-xmark"></i> Reject</button>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Table Pagination -->
+        <div class="pagination-bar">
+          <span>Showing 1-4 of 6 pending items</span>
+          <div class="pagination-buttons">
+            <button class="btn-page">Previous</button>
+            <button class="btn-page active">1</button>
+            <button class="btn-page">2</button>
+            <button class="btn-page">Next</button>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <h4>NSBM NewsDesk</h4>
+          <p>The official campus news and club-post portal for NSBM Green University, Sri Lanka. Keeping the academic community connected and informed.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Latest News</a></li>
+            <li><a href="#">Submit an Article</a></li>
+            <li><a href="#">Bookmarks</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>NSBM Green University, Pitipana, Homagama, Sri Lanka</p>
+          <p>Email: newsdesk@nsbm.ac.lk</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 NSBM NewsDesk. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- External JavaScript Link -->
+  <script src="script.js"></script>
+</body>
+</html>
