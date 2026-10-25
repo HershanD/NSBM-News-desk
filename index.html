@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookmarks | NSBM NewsDesk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="brand">
+    <img src="images/nsbm-logo.png.png"
+         alt="NSBM Green University Logo"
+         class="campus-logo">
+    <span>NSBM NewsDesk</span>
+</a>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">News</a>
+        <a href="#">Submit Article</a>
+        <a href="#" class="active">My Bookmarks</a>
+        <a href="#">My Submissions</a>
+        <a href="#">Admin Dashboard</a>
+    </nav>
+
+    <input type="search" id="searchInput" placeholder="Search news...">
+    <button class="profile" aria-label="User Profile">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="white">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </svg>
+</button>
+</header>
+
+<div class="breaking">
+    <strong>BREAKING</strong>
+    <marquee>
+        Annual Green Walk 2026 announced with massive participation
+        • Faculty of Computing wins the Inter-Faculty Hackathon 2026
+        • Admissions for the new intake
+    </marquee>
+</div>
+
+<main class="container">
+
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">▯ SAVED ARTICLES</p>
+            <h2>My Bookmarks</h2>
+        </div>
+
+        <div class="filters">
+            <button class="filter active" data-category="All">All (4)</button>
+            <button class="filter" data-category="Campus Life">Campus Life</button>
+            <button class="filter" data-category="Technology">Technology</button>
+        </div>
+    </div>
+
+    <section class="article-grid" id="articleGrid">
+
+        <article class="article-card" data-category="Campus Life">
+            <div class="image-wrap">
+                <img src="images/lecturehall.jpg"
+                     alt="University campus">
+                <span class="tag">Campus Life</span>
+                <button class="bookmark" aria-label="Toggle bookmark">▮</button>
+            </div>
+            <div class="content">
+                <p class="meta">Oct 24, 2026 · 4 min read</p>
+                <h3>Annual Green Walk 2026 Announced with Massive Student Participation</h3>
+                <p class="description">Join the largest campus event of the year celebrating sustainability, unity, and student spirit across all faculties at NSBM Green University.</p>
+                <div class="bottom">
+                    <span class="author"><span class="avatar">NT</span> NSBM News Team</span>
+                    <a href="#" class="read">Read →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="article-card" data-category="Sport">
+            <div class="image-wrap">
+                <img src="images/sport.jpg"
+                     alt="Students working together">
+                <span class="tag tech">Sport</span>
+                <button class="bookmark" aria-label="Toggle bookmark">▮</button>
+            </div>
+            <div class="content">
+                <p class="meta">March 24, 2026 · 4 min read</p>
+                <h3>NSBM Sports Fiesta 2026</h3>
+                <p class="description"><p>Students showcased their sporting talents across 20 sports, celebrating teamwork, unity, and sportsmanship.</p></p>
+                <div class="bottom">
+                    <span class="author"><span class="avatar">ST</span> NSBM Sport Team</span>
+                    <a href="#" class="read">Read →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="article-card" data-category="Art & Culture">
+            <div class="image-wrap">
+                <img src="images/culture.jpg"
+                     alt="Research symposium"><span class="tag">Art & Culture</span>
+                <button class="bookmark" aria-label="Toggle bookmark">▮</button>
+            </div>
+            <div class="content">
+                <p class="meta">February 11, 2026 · 3 min read</p>
+                <h3>Harithabhinandana 2026 – A Celebration of Culture</h3>
+                <p class="description"><p>NSBM celebrated Sri Lankan culture and creativity through traditional performances, singing, drama, and student talent.</p></p>
+                <div class="bottom">
+                    <span class="author"><span class="avatar">CS</span>NSBM Cultural Society</span>
+                    <a href="#" class="read">Read →</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="article-card" data-category="Technology">
+            <div class="image-wrap">
+                <img src="images/Engineering.jpg"
+                     alt="Engineering technology">
+                <span class="tag tech">Technology</span>
+                <button class="bookmark" aria-label="Toggle bookmark">▮</button>
+            </div>
+            <div class="content">
+                <p class="meta">Oct 13, 2026 · 5 min read</p>
+                <h3><h3>NSBM FIT Programme Introduces Students to Generative AI</h3></h3>
+                <p class="description"><p>NSBM introduced Computing students to Generative AI, Agentic AI, and emerging technologies, exploring their applications in software engineering and future career opportunities.</p></p>
+                <div class="bottom">
+                    <span class="author"><span class="avatar">CT</span> NSBM Computing Team</span>
+                    <a href="#" class="read">Read →</a>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <p id="noResults" hidden>No articles found.</p>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h3>NSBM NewsDesk</h3>
+            <p>The official campus news and club-post portal for NSBM Green University, Sri Lanka. Keeping the academic community connected and informed.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">Latest News</a>
+            <a href="#">Submit an Article</a>
+            <a href="#">Bookmarks</a>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <p>NSBM Green University, Pitipana, Homagama, Sri Lanka</p>
+            <p>Email: newsdesk@nsbm.ac.lk</p>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2026 NSBM NewsDesk. All rights reserved.
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
