@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Account Settings | NSBM NewsDesk</title>
+
+    <link rel="stylesheet" href="user_account_settings.css">
+</head>
+
+<body>
+
+
+<header class="navbar">
+
+    <a href="dashboard.html" class="brand">
+        <img src="nsbm logo3.png"
+             alt="NSBM Logo"
+             class="brand-logo">
+
+        <span>NSBM NewsDesk</span>
+    </a>
+
+    <nav class="navigation">
+        <a href="dashboard.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="categories.html">Categories⌄</a>
+    </nav>
+
+    <div class="nav-right">
+        <input type="search"
+               placeholder="Search news..."
+               aria-label="Search news">
+
+        <a href="user_profile.html" class="user-icon"
+           aria-label="My profile"><img src="p2.jpg"></a>
+    </div>
+
+</header>
+
+
+
+<div class="breaking-news">
+    <span class="breaking-label">NEWS</span>
+    <p>Stay connected with the latest news from NSBM.</p>
+</div>
+
+
+
+<main class="container">
+
+    
+    <section class="page-heading">
+        <div>
+            <h1>Account Settings</h1>
+            <p>Manage your profile, security and news preferences.</p>
+        </div>
+
+        <a href="user_profile.html" class="back-button">
+            ← Back to Profile
+        </a>
+    </section>
+
+
+    <!-- SETTINGS NAVIGATION -->
+    <nav class="settings-tabs">
+        <a href="#personal" class="tab active">Personal Information</a>
+        <a href="#security" class="tab">Security</a>
+        <a href="#preferences" class="tab">News Preferences</a>
+        <a href="#notifications" class="tab">Notifications</a>
+    </nav>
+
+
+   
+    <form action="#" method="post" class="settings-form">
+
+
+        
+        <section class="settings-card" id="personal">
+
+            <div class="card-heading">
+                <div class="heading-icon">♙</div>
+
+                <div>
+                    <h2>Personal Information</h2>
+                    <p>Update your basic student account details.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text"
+                           id="fullName"
+                           name="fullName"
+                           value="Student Name"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text"
+                           id="studentId"
+                           name="studentId"
+                           value="NSBM00123"
+                           readonly>
+
+                    <small>Contact the administration to change your student ID.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           value="student@nsbm.ac.lk"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="faculty">Faculty</label>
+                    <input type="text"
+                           id="faculty"
+                           name="faculty"
+                           value="Faculty of Computing"
+                           readonly>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="degree">Degree Programme</label>
+
+                    <input type="text"
+                           id="degree"
+                           name="degree"
+                           value="BSc in Computing"
+                           readonly>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        
+        <section class="settings-card" id="security">
+
+            <div class="card-heading">
+                <div class="heading-icon">♧</div>
+
+                <div>
+                    <h2>Change Password</h2>
+                    <p>Use a strong password to protect your account.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group full-width">
+                    <label for="currentPassword">Current Password</label>
+
+                    <input type="password"
+                           id="currentPassword"
+                           name="currentPassword"
+                           placeholder="Enter current password"
+                           autocomplete="current-password">
+                </div>
+
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+
+                    <input type="password"
+                           id="newPassword"
+                           name="newPassword"
+                           placeholder="Enter new password"
+                           minlength="8"
+                           autocomplete="new-password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm New Password</label>
+
+                    <input type="password"
+                           id="confirmPassword"
+                           name="confirmPassword"
+                           placeholder="Re-enter new password"
+                           minlength="8"
+                           autocomplete="new-password">
+                </div>
+
+            </div>
+
+            <p class="help-text">
+                Leave the password fields empty if you do not want to change
+                your password.
+            </p>
+
+        </section>
+
+
+       
+        <section class="settings-card" id="preferences">
+
+            <div class="card-heading">
+                <div class="heading-icon">▤</div>
+
+                <div>
+                    <h2>News Preferences</h2>
+                    <p>Select the categories you are interested in.</p>
+                </div>
+            </div>
+
+            <div class="preference-list">
+
+                <label class="preference-item">
+                    <span>
+                        <strong>Academic</strong>
+                        <small>Exams, academic updates and university notices</small>
+                    </span>
+
+                    <input type="checkbox"
+                           name="categories[]"
+                           value="academic"
+                           checked>
+                </label>
+
+                <label class="preference-item">
+                    <span>
+                        <strong>Events</strong>
+                        <small>Campus events, workshops and competitions</small>
+                    </span>
+
+                    <input type="checkbox"
+                           name="categories[]"
+                           value="events"
+                           checked>
+                </label>
+
+                <label class="preference-item">
+                    <span>
+                        <strong>Sports</strong>
+                        <small>Sports news, matches and student achievements</small>
+                    </span>
+
+                    <input type="checkbox"
+                           name="categories[]"
+                           value="sports">
+                </label>
+
+                <label class="preference-item">
+                    <span>
+                        <strong>General News</strong>
+                        <small>Other news and updates from NSBM</small>
+                    </span>
+
+                    <input type="checkbox"
+                           name="categories[]"
+                           value="general"
+                           checked>
+                </label>
+
+            </div>
+
+        </section>
+
+
+       
+        <section class="settings-card" id="notifications">
+
+            <div class="card-heading">
+                <div class="heading-icon">♧</div>
+
+                <div>
+                    <h2>Notification Settings</h2>
+                    <p>Choose which email updates you want to receive.</p>
+                </div>
+            </div>
+
+            <div class="preference-list">
+
+                <label class="preference-item">
+                    <span>
+                        <strong>News Updates</strong>
+                        <small>Receive updates about your selected categories.</small>
+                    </span>
+
+                    <input type="checkbox"
+                           name="newsNotifications"
+                           value="yes"
+                           checked>
+                </label>
+
+                <label class="preference-item">
+                    <span>
+                        <strong>Article Submission Updates</strong>
+                        <small>Know when your submitted articles are approved or rejected.</small>
+                    </span>
+
+                    <input type="checkbox"
+                           name="submissionNotifications"
+                           value="yes"
+                           checked>
+                </label>
+
+                <label class="preference-item">
+                    <span>
+                        <strong>Comment Notifications</strong>
+                        <small>Receive updates about activity on your articles.</small>
+                    </span>
+
+                    <input type="checkbox"
+                           name="commentNotifications"
+                           value="yes">
+                </label>
+
+            </div>
+
+        </section>
+
+
+        
+        <div class="form-actions">
+
+            <a href="profile.html" class="cancel-button">
+                Cancel
+            </a>
+
+            <button type="submit" class="save-button">
+                Save Changes
+            </button>
+
+        </div>
+
+    </form>
+
+
+    
+    <footer class="footer">
+
+        <div class="footer-column">
+            <h3>NSBM NewsDesk</h3>
+
+            <p>
+                Your campus news portal for university updates,
+                academic news and student activities.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="news.html">Latest News</a>
+            <a href="profile.html">My Profile</a>
+            <a href="settings.html">Account Settings</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>NSBM Green University, Sri Lanka</p>
+            <p>Email: newsdesk@nsbm.ac.lk</p>
+        </div>
+
+        <p class="copyright">
+            © 2026 NSBM NewsDesk. All rights reserved.
+        </p>
+
+    </footer>
+
+</main>
+
+</body>
+</html>
+
+
