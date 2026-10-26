@@ -104,13 +104,6 @@
           </svg>
           <input type="search" placeholder="Search news..." aria-label="Search news">
         </div>
-
-        <!-- Profile Icon Beside Search -->
-        <a href="profile.html" class="avatar-badge" title="Profile" aria-label="Open profile">
-          <svg class="icon">
-            <use href="#i-user" />
-          </svg>
-        </a>
       </div>
 
     </nav>
@@ -125,44 +118,63 @@
 
   <main class="container">
 
-    <!-- Hero Featured Story Card -->
+
+
+    <!-- Hero Featured Story -->
     <section class="hero-feature">
       <div class="hero-content">
         <div class="hero-meta">
-          <span class="badge badge-featured">FEATURED STORY</span>
-          <span class="date-meta">October 24, 2026 &bull; Faculty of Computing</span>
+          <span class="badge-featured">FEATURED STORY</span>
+          <span class="date-meta">Campus News</span>
         </div>
-        <h1 class="hero-title">NSBM Faculty of Computing Wins National Inter-University Hackathon 2026</h1>
-        <p class="hero-excerpt">Our brilliant undergraduates triumphed over 50 competing universities with an AI-driven
-          smart agriculture platform designed to optimize water distribution in rural farming communities.</p>
+
+        <h1 class="hero-title">
+          Discover the Latest News and Innovation at NSBM
+        </h1>
+
+        <p class="hero-excerpt">
+          Stay connected with campus life, academic achievements,
+          student activities, research, and the latest updates from
+          NSBM Green University.
+        </p>
+
         <div class="hero-actions">
-          <a href="article-details.html" class="btn btn-primary"><svg class="icon">
-              <use href="#i-arrow" />
-            </svg> Read Full Story</a>
-          <button type="button" class="btn btn-secondary"><svg class="icon">
-              <use href="#i-bookmark" />
-            </svg> Save</button>
+          <a href="news.html" class="btn btn-primary">
+            Explore Latest News
+          </a>
         </div>
       </div>
+
       <div class="hero-image-wrap">
-        <img src="images/hackathon-champions.jpg" alt="NSBM Hackathon Champions">
+        <img src="images/hackathon-champions.jpg" alt="Students participating in university activities"
+          onerror="this.style.display='none'">
+        <span class="hero-image-label">NSBM GREEN UNIVERSITY</span>
       </div>
     </section>
 
-    <!-- Category Filter Tabs & Subscribe Button -->
-    <div class="filter-row">
+
+
+    <!-- News Categories -->
+    <section class="filter-row" aria-label="Filter news">
       <div class="category-tabs">
-        <button class="cat-btn active">All News</button>
-        <button class="cat-btn">Campus Life</button>
-        <button class="cat-btn">Academics</button>
-        <button class="cat-btn">Research</button>
-        <button class="cat-btn">Clubs &amp; Societies</button>
-        <button class="cat-btn">Sports</button>
+        <button type="button" class="cat-btn active">All News</button>
+        <button type="button" class="cat-btn">Campus Life</button>
+        <button type="button" class="cat-btn">Academics</button>
+        <button type="button" class="cat-btn">Research</button>
+        <button type="button" class="cat-btn">Clubs &amp; Societies</button>
+        <button type="button" class="cat-btn">Sports</button>
       </div>
-      <button type="button" class="subscribe-btn"><svg class="icon">
-          <use href="#i-bell" />
-        </svg> Subscribe Alerts</button>
-    </div>
+
+
+      <button type="button" class="subscribe-btn" id="subscribeAlertsBtn" aria-pressed="false">
+        <svg class="icon">
+          <use href="#i-bell"></use>
+        </svg>
+        <span>Subscribe Alerts</span>
+      </button>
+
+    </section>
+
 
     <!-- Main Content Area Grid -->
     <div class="content-grid">
