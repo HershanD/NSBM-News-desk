@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Article | NSBM NewsDesk</title>
+    <link rel="stylesheet" href="SubmitArticle.css">
+</head>
+<body>
+
+<header class="topbar">
+    <a class="brand" href="index.html">
+        <img src="nsbm.jpeg" class="logo" style="width:52px; height:52px; object-fit:contain; background:white; padding:4px; border-radius:10px;">
+        
+        <span><strong>NSBM NewsDesk</strong></b></span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <nav class="nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="News.html">News</a>
+        <a class="active" href="SubmitArticle.html">Submit Article</a>
+        <a href="Bookmarks.html">My Bookmarks</a>
+        <a href="MySubmissions.html">My Submissions</a>
+        <a href="AdminDashboard.html">Admin Dashboard</a>
+    </nav>
+
+    <input class="search" type="search" placeholder="Search news...">
+    <div class="profile-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+  </svg>
+</div>
+</div>
+</header>
+
+<div class="breaking-bar">
+    <span class="breaking-label">BREAKING</span>
+    <marquee>
+        
+        Annual Green Walk 2026 announced with massive participation
+        • Faculty of Computing wins the Inter-Faculty Hackathon 2026
+        • Admissions for the new intake
+        
+    </marquee>
+
+</div>
+
+<main class="page">
+
+    <section class="page-heading">
+        <div>
+            <p class="eyebrow"><b>EDITORIAL CONTRIBUTION</b></p>
+            <h2>Submit a Campus Story</h2>
+            <p class="intro">
+                Share campus news, club achievements, research breakthroughs
+                or sports updates with the NSBM Green University community.
+            </p>
+        </div>
+
+        <div class="review-note">
+            ✓ All submissions are reviewed by the editorial faculty.
+        </div>
+    </section>
+
+    <div class="content-grid">
+
+        <section class="form-panel">
+            <form id="articleForm">
+
+                <div class="field">
+                    <div class="label-line">
+                        <label for="articleTitle">Article Title</label>
+                        <small>Max 120 characters</small>
+                    </div>
+
+                    <input type="text" id="articleTitle"
+                           maxlength="120"
+                           placeholder="e.g.Faculty of computing wins inter-University Hackathon 2026"
+                           required>
+                </div>
+
+                <div class="two-columns">
+                    <div class="field">
+                        <label for="category">Category</label>
+
+                        <select id="category" required>
+                            <option value="">Select a category</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Events">Events</option>
+                            <option value="General">General</option>
+                            <option value="Sports">Sports</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="author">Author / Organization</label>
+
+                        <input type="text" id="author"
+                               placeholder="e.g.IEEE Student Branch NSBM"
+                               required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="label-line">
+                        <label for="summary">Short Summary / Excerpt</label>
+                        <small>Maximum 300 characters</small>
+                    </div>
+
+                    <textarea id="summary" maxlength="300"
+                              rows="3"
+                              placeholder="Write a short summary..."
+                              required></textarea>
+
+                    <div class="counter">
+                        <span id="summaryCount">0</span>/300
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="label-line">
+                        <label for="content">Main Article Content(Markdown / Rich Text)</label>
+
+                        <div class="editor-tabs">
+                            <button type="button" id="writeTab"
+                                    class="tab active">Write</button>
+                            <button type="button" id="previewTab"
+                                    class="tab">Preview</button>
+                        </div>
+                    </div>
+
+                    <textarea id="content" rows="12"
+                              placeholder="Write your complete article here...
+You can use standard markdown headers ,bullet points and links."
+                              required></textarea>
+
+                    <div id="contentPreview" class="content-preview"
+                         hidden></div>
+
+                    <small class="editor-hint">Article content</small>
+                </div>
+
+                <div class="field">
+                    <label for="coverImage">Featured Cover Image</label>
+
+                    <label class="upload-area" id="uploadArea"
+                           for="coverImage">
+                        <span class="upload-icon">☁</span>
+                        <strong>Drag and drop your cover image</strong>
+                        <small>JPG, PNG or WEBP — Maximum 10MB</small><br>
+                        <span class="browse-btn">Browse Files</span>
+                        <input type="file" id="coverImage"
+                               accept=".jpg,.jpeg,.png,.webp" hidden>
+                    </label>
+
+                    <div id="fileName" class="file-name"></div>
+                </div>
+
+                <div class="form-bottom">
+                    <span class="autosave">
+                        ● Frontend preview — not connected to database
+                    </span>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-light"
+                                id="saveDraft">Save Draft</button>
+
+                        <button type="submit" class="btn btn-primary">
+                            Submit for Review →
+                        </button>
+                    </div>
+                </div>
+
+                <p id="formMessage" class="form-message"></p>
+
+            </form>
+        </section>
+
+        <aside class="sidebar">
+
+            <section class="side-card">
+                <h2>☷ Submission Guidelines</h2>
+
+                <ul>
+                    <li>Ensure all facts, names and event dates are accurate.</li>
+                    <li>Use original and relevant images.</li>
+                    <li>Plagiarized content may be rejected.</li>
+                    <li>Faculty approval may take 24–48 business hours.</li>
+                </ul>
+            </section>
+
+            <section class="overview-card">
+                <h2>Your Submissions Overview</h2>
+
+                <div class="stats">
+                    <div>
+                        <strong id="pendingCount">00</strong>
+                        <span>Pending Review</span>
+                    </div>
+
+                    <div>
+                        <strong id="PublishedCount">00</strong>
+                        <span>Published</span>
+                    </div>
+                </div>
+
+                <a href="MySubmissions.html">
+                    View My Submissions →
+                </a>
+            </section>
+
+        </aside>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-grid">
+
+        <section>
+            <h3>NSBM NewsDesk</h3>
+            <p>
+                The campus news portal for NSBM Green University,
+                keeping the academic community informed.
+            </p>
+        </section>
+
+        <section>
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="News.html">Latest News</a>
+            <a href="SubmitArticle.html">Submit an Article</a>
+            <a href="Bookmarks.html">Bookmarks</a>
+        </section>
+
+        <section>
+            <h3>Contact</h3>
+            <p>NSBM Green University, Pitipana, Homagama, Sri Lanka</p>
+            <p>Email: newsdesk@nsbm.ac.lk</p>
+        </section>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 NSBM NewsDesk. All rights reserved.
+    </div>
+</footer>
+
+<script src="SubmitArticle.js"></script>
+</body>
+</html>
