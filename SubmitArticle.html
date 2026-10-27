@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Article | NSBM NewsDesk</title>
+    <meta name="description" content="Submit campus news, academic stories, events and sports articles to NSBM NewsDesk.">
+
+    <link rel="stylesheet" href="SubmitArticle.css">
+    <script src="SubmitArticle.js" defer></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="topbar">
+    <a class="brand" href="index.html" aria-label="NSBM NewsDesk Home">
+        <img src="nsbm.jpeg" class="logo" alt="NSBM Green University Logo">
+        <span><strong><b>NSBM NewsDesk</b></strong></span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="mainNav"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="News.html">News</a>
+        <a href="SubmitArticle.html" class="active">Submit Article</a>
+        <a href="ReviewArticles.html">Review Articles</a>
+        <a href="Bookmarks.html">My Bookmarks</a>
+        <a href="MySubmissions.html">My Submissions</a>
+    </nav>
+
+    <div class="header-actions">
+        <form class="search-form" id="searchForm" role="search">
+            <input class="search" id="newsSearch"
+                   type="search"
+                   placeholder="Search news..."
+                   aria-label="Search news">
+            <button type="submit" class="search-btn"
+                    aria-label="Search">⌕</button>
+        </form>
+
+        <a href="Profile.html" class="profile-icon"
+           aria-label="My Profile" title="My Profile">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4.42 0-8 2.01-8 4.5V21h16v-2.5c0-2.49-3.58-4.5-8-4.5z"/>
+            </svg>
+        </a>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="page">
+
+    <section class="page-heading">
+        <div class="heading-content">
+            <p class="eyebrow"><b>EDITORIAL CONTRIBUTION</b></p>
+
+            <h1>Submit an Article</h1>
+
+            <p class="intro">
+                Share campus news, student achievements, research,
+                events and sports updates with the NSBM community.
+            </p>
+        </div>
+
+        <div class="review-note">
+            <span class="check-icon" aria-hidden="true">✓</span>
+            <span>Every submission is reviewed by the editorial team.</span>
+        </div>
+    </section>
+
+    <div class="content-grid">
+
+        <!-- ARTICLE FORM -->
+        <section class="form-panel">
+
+            <div class="form-title">
+                <h2>Article Details</h2>
+                <p>Complete the information below to submit your story.</p>
+            </div>
+
+            <form id="articleForm">
+
+                <div class="field">
+                    <div class="label-line">
+                        <label for="articleTitle">Article Title</label>
+                        <small>Maximum 120 characters</small>
+                    </div>
+
+                    <input type="text"
+                           id="articleTitle"
+                           maxlength="120"
+                           placeholder="Enter your article title"
+                           required>
+                </div>
+
+                <div class="two-columns">
+
+                    <div class="field">
+                        <label for="category">Category</label>
+
+                        <select id="category" required>
+                            <option value="">Select a category</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Events">Events</option>
+                            <option value="General">General</option>
+                            <option value="Sports">Sports</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="author">Author / Organization</label>
+
+                        <input type="text"
+                               id="author"
+                               maxlength="100"
+                               placeholder="Enter author or organization"
+                               required>
+                    </div>
+
+                </div>
+
+                <div class="field">
+                    <div class="label-line">
+                        <label for="summary">Article Summary</label>
+                        <small>Maximum 300 characters</small>
+                    </div>
+
+                    <textarea id="summary"
+                              maxlength="300"
+                              rows="3"
+                              placeholder="Write a short summary of your article..."
+                              required></textarea>
+
+                    <div class="counter">
+                        <span id="summaryCount">0</span>/300
+                    </div>
+                </div>
+
+                <div class="field">
+
+                    <div class="label-line editor-label-line">
+                        <label for="content">Main Article Content</label>
+
+                    
+                    <div class="editor-tabs">
+                        <button type="button" id="writeTab" class="editor-tab active">
+                              Write
+                        </button>
+
+                        <button type="button" id="previewTab" class="editor-tab">
+                            Preview
+                        </button>
+                    </div>
+
+                    <textarea
+                        id="content"
+                        name="content"
+                        rows="10"
+                        placeholder="Write your article here..."
+                        required
+                    ></textarea>
+        
+                    <div id="contentPreview"
+                         class="content-preview"
+                         hidden></div>
+
+                    <small class="editor-hint">
+                        Write clear, accurate and original content.
+                    </small>
+                </div>
+
+                <!-- COVER IMAGE -->
+                <div class="field">
+                    <label for="coverImage">Featured Cover Image</label>
+
+                    <label class="upload-area"
+                           id="uploadArea"
+                           for="coverImage">
+
+                        <span class="upload-icon" aria-hidden="true">↑</span>
+
+                        <strong>Upload a cover image</strong>
+
+                        <small>JPG, PNG or WEBP · Maximum 10 MB</small>
+
+                        <span class="browse-btn">Browse Files</span>
+
+                        <input type="file"
+                               id="coverImage"
+                               accept=".jpg,.jpeg,.png,.webp"
+                               hidden>
+                    </label>
+
+                    <div id="fileName"
+                         class="file-name"
+                         aria-live="polite"></div>
+                </div>
+
+                <!-- FORM ACTIONS -->
+                <div class="form-bottom">
+
+                    <div class="form-actions">
+                        <button type="button"
+                                class="btn btn-light"
+                                id="saveDraft">
+                            Save Draft
+                        </button>
+
+                        <button type="submit"
+                                class="btn btn-primary">
+                            Submit for Review →
+                        </button>
+                    </div>
+
+                </div>
+
+                <p id="formMessage"
+                   class="form-message"
+                   role="status"
+                   aria-live="polite"></p>
+
+            </form>
+        </section>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <section class="side-card">
+                <h2>
+                    <span class="side-icon" aria-hidden="true">✓</span>
+                    Submission Guidelines
+                </h2>
+
+                <ul>
+                    <li>Ensure all facts, names and event dates are accurate.</li>
+                    <li>Use original and relevant images.</li>
+                    <li>Submit clear and professional content.</li>
+                    <li>All articles require editorial approval.</li>
+                </ul>
+            </section>
+
+            <section class="overview-card">
+                <p class="overview-label">YOUR ACTIVITY</p>
+
+                <h2>Submission Overview</h2>
+
+                <p class="overview-description">
+                    Track your article submission status.
+                </p>
+
+                <div class="stats">
+
+                    <div class="stat-item">
+                        <div id="pendingCount">00</div>
+                        <small>Pending Review</small>
+                    </div>
+
+                    <div class="stat-item">
+                        <div id="PublishedCount">00</div>
+                        <small>Published</small>
+                    </div>
+
+                </div>
+
+                <a class="overview-link" href="MySubmissions.html">
+                    View My Submissions →
+                </a>
+            </section>
+
+            <section class="side-card help-card">
+                <h2>Need Assistance?</h2>
+
+                <p>
+                    Make sure your article is complete before
+                    submitting it for editorial review.
+                </p>
+
+                <a href="mailto:newsdesk@nsbm.ac.lk">
+                    Contact Editorial Team →
+                </a>
+            </section>
+
+        </aside>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <section>
+            <h3>NSBM NewsDesk</h3>
+
+            <p>
+                The campus news portal for NSBM Green University,
+                keeping the academic community informed.
+            </p>
+        </section>
+
+        <section>
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="News.html">Latest News</a>
+            <a href="SubmitArticle.html">Submit an Article</a>
+            <a href="ReviewArticles.html">Review Articles</a>
+            <a href="Bookmarks.html">Bookmarks</a>
+        </section>
+
+        <section>
+            <h3>Contact</h3>
+
+            <p>NSBM Green University, Pitipana, Homagama, Sri Lanka</p>
+            <a href="mailto:newsdesk@nsbm.ac.lk">
+                newsdesk@nsbm.ac.lk
+            </a>
+        </section>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 NSBM NewsDesk. All rights reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>
